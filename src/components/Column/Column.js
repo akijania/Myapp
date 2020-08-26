@@ -8,11 +8,12 @@ import Icon from '../Icon/Icon.js';
 
 class Column extends React.Component {
   state = {
-    cards: this.props.cards || []
+    cards: this.props.cards || [],
   };
   static propTypes = {
     title: PropTypes.node.isRequired,
-    icon: PropTypes.node
+    icon: PropTypes.node,
+    cards: PropTypes.node,
   };
   addCard(title) {
     this.setState(state => ({
@@ -22,9 +23,9 @@ class Column extends React.Component {
           key: state.cards.length
             ? state.cards[state.cards.length - 1].key + 1
             : 0,
-          title
-        }
-      ]
+          title,
+        },
+      ],
     }));
   }
   render() {
