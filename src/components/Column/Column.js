@@ -21,8 +21,8 @@ class Column extends React.Component {
           </span>
           {title}
         </h3>
-        {cards.map(({ key, ...cardProps }) => (
-          <Card key={key} {...cardProps} />
+        {cards.map(cardProps => (
+          <Card key={cardProps.id} {...cardProps} />
         ))}
         {/* <Creator
           text={settings.cardCreatorText}

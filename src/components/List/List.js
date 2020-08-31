@@ -10,7 +10,6 @@ import ReactHtmlParser from 'react-html-parser';
 class List extends React.Component {
   static propTypes = {
     title: PropTypes.node.isRequired,
-    src: PropTypes.string,
     description: PropTypes.node,
     columns: PropTypes.array,
     image: PropTypes.node,
