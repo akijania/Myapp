@@ -1,1 +1,1 @@
-npm run web
+web: npm run dist
