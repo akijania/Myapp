@@ -18,10 +18,10 @@ export const createAction_moveCard = payload => ({ payload, type: MOVE_CARD });
 
 
 
-export default function reducer(state = [], statePart = '', action = {}) {
+export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
     case ADD_CARD:
-      return [...state, action.payload];
+      return [...statePart, action.payload];
     case MOVE_CARD: {
       const {id, src, dest} = action.payload;
       const targetCard = statePart.filter(card => card.id == id)[0];
@@ -80,6 +80,6 @@ export default function reducer(state = [], statePart = '', action = {}) {
     }
     
     default:
-      return state;
+      return statePart;
   }
 }
