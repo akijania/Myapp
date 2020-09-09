@@ -3,17 +3,17 @@ import Container from '../Container/Container';
 import PropTypes from 'prop-types';
 import Hero from '../Hero/Hero.js';
 
-
-const Info = ({title, subtitle, image}) => (
+const FAQ = ({title, image, question, answer}) => (
   <Container>
     <Hero titleText={title} image={image} />
-    <p>{subtitle}</p>
-  
+    <h2>{question}</h2>
+    <p>{answer}</p>
   </Container>
 );
-Info.propTypes = {
+FAQ.propTypes = {
   title: PropTypes.node,
-  subtitle: PropTypes.node,
+  question: PropTypes.node,
+  answer: PropTypes.node,
   image: PropTypes.node,
 };
-export default Info;
+export default FAQ;
