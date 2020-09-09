@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
-import App from './App';
-import {createAction_moveCard} from '../../../src/redux/cardsRedux.js';
+import Home from './Home';
+import {createAction_moveCard} from '../../redux/cardsRedux.js';
 
 const mapStateToProps = state => ({
   title: state.app.title,
@@ -11,4 +11,4 @@ const mapDispatchToProps = (dispatch) => ({
   moveCard: payload => dispatch(createAction_moveCard(payload)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
