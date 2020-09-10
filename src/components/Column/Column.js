@@ -6,6 +6,7 @@ import Creator from '../Creator/Creator.js';
 import Icon from '../Icon/Icon.js';
 import { settings } from '../../data/dataStore';
 import {Droppable} from 'react-beautiful-dnd';
+import {DragDropContext} from 'react-beautiful-dnd';
 
 class Column extends React.Component {
   static propTypes = {
@@ -28,21 +29,23 @@ class Column extends React.Component {
           </span>
           {title}
         </h3>
-        <Droppable droppableId={id}>
-          {provided => (
-            <div
-              className={styles.cards}
-              {...provided.droppableProps}
-              ref={provided.innerRef}
-            >
-              {cards.map(cardData => (
-                <Card key={cardData.id} {...cardData} />
-              ))}
+        <DragDropContext>
+          <Droppable droppableId={id}>
+            {provided => (
+              <div
+                className={styles.cards}
+                {...provided.droppableProps}
+                ref={provided.innerRef}
+              >
+                {cards.map(cardData => (
+                  <Card key={cardData.id} {...cardData} />
+                ))}
 
-              {provided.placeholder}
-            </div>
-          )}
-        </Droppable>
+                {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
+        </DragDropContext>
         <Creator
           text={settings.cardCreatorText}
           action={addCard}
