@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from '../Card/Card.js';
+import Container from '../Container/Container.js';
 
 
 class SearchResults extends React.Component {
@@ -11,9 +12,11 @@ class SearchResults extends React.Component {
     const { cards } = this.props;
     return (
       <section>
-        {cards.map(cardData => (
-          <Card key={cardData.id} {...cardData} />
-        ))} 
+        <Container>
+          {cards.map(cardData => (
+            <Card key={cardData.id} {...cardData} />
+          ))} 
+        </Container>
       </section>
     );
   }

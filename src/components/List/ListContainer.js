@@ -2,6 +2,7 @@ import {connect} from 'react-redux';
 import List from './List';
 import {getColumnsForList} from '../../../src/redux/columnsRedux.js';
 import {createActionAddColumn } from '../../../src/redux/columnsRedux.js';
+import {createAction_moveCard} from '../../redux/cardsRedux.js';
 
 
 
@@ -20,5 +21,7 @@ const mapDispatchToProps = (dispatch, props) => ({
     listId: props.match.params.id,
     title,
   })),
+  moveCard: payload => dispatch(createAction_moveCard(payload)),
 });
+
 export default connect(mapStateToProps, mapDispatchToProps)(List);
